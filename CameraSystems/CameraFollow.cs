@@ -38,13 +38,12 @@ public class CameraFollow : MonoBehaviour {
 	 float inputX;
 	 float inputZ;
 	 GameObject player;
-	 FilmstormAdvancedClimbingEngine playerLoco;
+	
 
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
-		playerLoco = player.GetComponent<FilmstormAdvancedClimbingEngine> ();
 		Vector3 rot = transform.localRotation.eulerAngles;
 		rotY = rot.y;
 		rotX = rot.x;
@@ -71,13 +70,7 @@ public class CameraFollow : MonoBehaviour {
 		Quaternion localRotation = Quaternion.Euler (rotX, rotY, 0.0f);
 		transform.rotation = localRotation;
 
-		if (playerLoco.isClimbing == true) {
-			CameraMoveSpeed = 50f;
-		}
-
-		if (playerLoco.isClimbing == false) {
-			CameraMoveSpeed = 120f;
-		}
+		
 
 	}
 
